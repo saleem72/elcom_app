@@ -16,7 +16,14 @@ class IdentifyingAccountBloc
     on<IdentifyingAccountFormSubmitted>(_formSubmitted);
   }
 
-  _phoneNumberChanged(
+  @override
+  void onTransition(
+      Transition<IdentifyingAccountEvent, IdentifyingAccountState> transition) {
+    print(transition);
+    super.onTransition(transition);
+  }
+
+  void _phoneNumberChanged(
     IdentifyingAccountPhoneNumberChanged event,
     Emitter<IdentifyingAccountState> emit,
   ) {
@@ -28,7 +35,7 @@ class IdentifyingAccountBloc
     ));
   }
 
-  _phoneNumberUnfocused(
+  void _phoneNumberUnfocused(
     IdentifyingAccountPhoneNumberUnfocused event,
     Emitter<IdentifyingAccountState> emit,
   ) {
@@ -39,7 +46,7 @@ class IdentifyingAccountBloc
     ));
   }
 
-  _formSubmitted(
+  void _formSubmitted(
     IdentifyingAccountFormSubmitted event,
     Emitter<IdentifyingAccountState> emit,
   ) {}

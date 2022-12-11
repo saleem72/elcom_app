@@ -13,3 +13,4 @@ export 'validation_message.dart';
 export 'title_text.dart';
 export 'failure_text.dart';
 export 'loading_view.dart';
+export 'primary_button.dart';
